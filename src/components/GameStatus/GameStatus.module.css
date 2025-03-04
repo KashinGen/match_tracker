@@ -1,0 +1,22 @@
+.status {
+  font-size: 12px;
+  font-weight: 500;
+  width: 92px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.finished {
+  background-color: var(--color-danger);
+}
+
+.ongoing {
+  background-color: var(--color-green);
+}
+
+.scheduled {
+  background-color: var(--color-orange);
+}

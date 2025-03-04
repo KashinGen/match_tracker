@@ -1,0 +1,21 @@
+.match {
+  padding: 16px;
+  border-radius: 4px;
+  width: 100%;
+  background-color: var(--background-card);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scoreWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.score {
+  font-size: 20px;
+  line-height: 24px;
+}

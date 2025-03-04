@@ -1,0 +1,5 @@
+.title {
+  font-family: var(--font-family-title);
+  font-size: 2rem;
+  line-height: 100%;
+}

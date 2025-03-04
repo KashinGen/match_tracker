@@ -1,0 +1,62 @@
+@import url('./reset.css');
+@import url('./fonts.css');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --background: #06080c;
+  --background-card: #0b0e12;
+  --color-primary: #fff;
+  --color-danger: #eb0237;
+  --color-orange: #eb6402;
+  --color-green: #43ad28;
+  --font-family-title: 'TacticSans', sans-serif;
+  --btn-hover: #a01131;
+  --btn-disabled: #701328;
+  --background-message: #0f1318;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--color-primary);
+}
+
+.container {
+  width: 100%;
+  padding: 0 42px;
+  margin: 0 auto;
+}
+
+#root {
+  width: 100%;
+}
