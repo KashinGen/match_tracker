@@ -10,3 +10,13 @@
   align-items: center;
   gap: 12px;
 }
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.screen {
+  padding-top: 42px;
+}

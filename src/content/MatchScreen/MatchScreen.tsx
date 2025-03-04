@@ -16,20 +16,22 @@ export const MatchScreen = ({ className = '' }: MatchScreenProps) => {
   return (
     <div className={cn(cls.screen, className)}>
       <div className="container">
-        <div className={cls.top}>
-          <Logo />
-          <div className={cls.controls}>
-            {error && <ErrorMessage error={error} />}
-            <RefetchButton
-              onClick={onReset}
-              disabled={loading}
-            />
+        <div className={cn(cls.inner)}>
+          <div className={cls.top}>
+            <Logo />
+            <div className={cls.controls}>
+              {error && <ErrorMessage error={error} />}
+              <RefetchButton
+                onClick={onReset}
+                disabled={loading}
+              />
+            </div>
           </div>
+          <MatchList
+            loading={loading}
+            matches={matches}
+          />
         </div>
-        <MatchList
-          loading={loading}
-          matches={matches}
-        />
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ export const TeamBadge = ({ className = '', name }: TeamBadgeProps) => {
     <div className={cn(cls.badge, className)}>
       <img
         alt={name}
-        src={'/public/images/team-icon.svg'}
+        src={'/images/team-icon.svg'}
         className={cls.image}
       />
       <span className={cls.name}>{name}</span>
