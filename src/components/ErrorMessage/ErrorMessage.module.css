@@ -6,4 +6,5 @@
   font-size: 18px;
   background-color: var(--background-message);
   border-radius: 4px;
+  font-weight: 500;
 }
