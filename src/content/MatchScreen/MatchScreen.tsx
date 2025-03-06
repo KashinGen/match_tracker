@@ -16,21 +16,21 @@ interface MatchScreenProps {
 const options: SelectOption[] = [
   {
     value: 'All',
-    label: 'Все статусы'
+    label: 'Все статусы',
   },
   {
     value: 'Ongoing',
-    label: 'Ongoing'
+    label: 'Ongoing',
   },
   {
     value: 'Scheduled',
-    label: 'Scheduled'
+    label: 'Scheduled',
   },
   {
     value: 'Finished',
-    label: 'Finished'
+    label: 'Finished',
   },
-]
+];
 
 export const MatchScreen = ({ className = '' }: MatchScreenProps) => {
   const { matches, error, loading, onReset } = useMatchesState();
@@ -40,11 +40,15 @@ export const MatchScreen = ({ className = '' }: MatchScreenProps) => {
       <div className="container">
         <div className={cn(cls.inner)}>
           <div className={cls.top}>
-          <div className={cls.controls}>
-            <Logo />
-            <CustomSelect options={options} onChange={(sel: SelectOption) => setSelectedOption(sel)} value={selectedOption}/>
-          </div>
-            
+            <div className={cls.controls}>
+              <Logo />
+              <CustomSelect
+                options={options}
+                onChange={(sel: SelectOption) => setSelectedOption(sel)}
+                value={selectedOption}
+              />
+            </div>
+
             <div className={cls.controls}>
               {error && <ErrorMessage error={error} />}
               <RefetchButton

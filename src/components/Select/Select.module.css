@@ -1,103 +1,87 @@
 .selectContainer {
-    position: relative;
-    min-width: 170px;
-    color: var(--color-gray);
-    font-weight: 500;
-    line-height: 150%;
+  position: relative;
+  min-width: 170px;
+  color: var(--color-gray);
+  font-weight: 500;
+  line-height: 150%;
+}
 
-  }
+.selectHeader {
+  border: 1px solid var(--background-card);
+  width: 100%;
+  padding: 16px 20px 16px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--background-card);
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: all 0.3s ease-in-out;
+}
 
-  .selectHeader {
-    border: 1px solid var(--background-card);
-    width: 100%;
-    padding: 16px 20px 16px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color:var(--background-card);
+.selectHeader svg {
+  transition: all 0.1s ease-in-out;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    transition: all .3s ease-in-out;
+.selectOption:disabled {
+  color: var(--select-option-disabled-color);
+}
 
-  }
+.selectHeader.open svg {
+  transform: rotate(180deg);
+}
 
-  .selectHeader svg {
-    transition: all .1s ease-in-out;
-  }
+.selectDropdown {
+  padding: 6px 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  background-color: var(--background-message);
 
-
-
-
-  .selectOption:disabled {
-    color: var(--select-option-disabled-color);
-  }
-
-  
-
-
-
-  .selectHeader.open svg {
-    transform: rotate(180deg);
-  }
-  
-  .selectDropdown {
-    padding: 6px 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    top: calc(100% + 8px);
-    background-color:var(--background-message);
-
-    border-radius: 4px;
-    /* max-height: 204px;
+  border-radius: 4px;
+  /* max-height: 204px;
     overflow-y: auto; */
-  }
-  
+}
 
-  
-  .selectOption {
-    padding: 12px;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    width: 100%;
-    display: flex;
-  }
-  
+.selectOption {
+  padding: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: 100%;
+  display: flex;
+}
 
-  @media screen and (hover:hover) {
-    .selectHeader:hover {
-      background-color:var(--background-message);
-      border: 1px solid var(--background-message);
-      color: var(--color-primary);
-
-    }
-    .selectHeader:hover svg path{
-      fill: var(--color-primary);
-    }
-    .selectOption:not(:disabled):hover {
-      background-color:var(--select-option-hover);
-      color: var(--color-primary);
-
-    }
-    
-  }
-
-  .selectHeader:active {
-    background-color:var(--background-card);
-    border: 1px solid var( --select-pressed-border);
+@media screen and (hover: hover) {
+  .selectHeader:hover {
+    background-color: var(--background-message);
+    border: 1px solid var(--background-message);
     color: var(--color-primary);
   }
-
-  .selectHeader:active svg path {
+  .selectHeader:hover svg path {
     fill: var(--color-primary);
   }
-
-  .selectOption:active {
+  .selectOption:not(:disabled):hover {
+    background-color: var(--select-option-hover);
     color: var(--color-primary);
-    background-color: var(--select-option-pressed) !important;
   }
+}
+
+.selectHeader:active {
+  background-color: var(--background-card);
+  border: 1px solid var(--select-pressed-border);
+  color: var(--color-primary);
+}
+
+.selectHeader:active svg path {
+  fill: var(--color-primary);
+}
+
+.selectOption:active {
+  color: var(--color-primary);
+  background-color: var(--select-option-pressed) !important;
+}

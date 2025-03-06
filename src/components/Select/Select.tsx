@@ -2,20 +2,20 @@ import React, { useState, useRef, useEffect } from 'react';
 import cls from './Select.module.css';
 import { SelectOption } from '../../types';
 import { Icon } from './Icon';
-import cn from 'classnames'
+import cn from 'classnames';
 
 interface CustomSelectProps {
   options: SelectOption[];
   placeholder?: string;
   onChange: (selectedOption: SelectOption) => void;
-  value: SelectOption ;
+  value: SelectOption;
 }
 
 export const CustomSelect: React.FC<CustomSelectProps> = ({
   options,
   placeholder = 'Select an option',
   onChange,
-  value
+  value,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -29,8 +29,8 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
     setSearchTerm('');
   };
 
-  const filteredOptions = options.filter(option =>
-    option.label.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredOptions = options.filter((option) =>
+    option.label.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   useEffect(() => {
@@ -48,15 +48,21 @@ export const CustomSelect: React.FC<CustomSelectProps> = ({
 
   // Сделал через кнопки, чтобы не мучаться с tab-index
   return (
-    <div className={cls.selectContainer} ref={selectRef}>
-      <button className={cn(cls.selectHeader, {[cls.open]: isOpen})} onClick={toggleOpen}>
+    <div
+      className={cls.selectContainer}
+      ref={selectRef}
+    >
+      <button
+        className={cn(cls.selectHeader, { [cls.open]: isOpen })}
+        onClick={toggleOpen}
+      >
         {value ? value.label : placeholder}
-        <Icon/>
+        <Icon />
       </button>
       {/* В идеале лучше через портал*/}
       {isOpen && (
         <div className={cls.selectDropdown}>
-          {filteredOptions.map(option => (
+          {filteredOptions.map((option) => (
             <button
               key={option.value}
               disabled={option.value === value.value}

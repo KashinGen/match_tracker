@@ -36,6 +36,7 @@ export default tseslint.config(
       'react/react-in-jsx-scope': 'off',
       'react/jsx-uses-react': 'off',
       '@typescript-eslint/no-misused-promises': 'warn',
+      'jsx-a11y/no-noninteractive-tabindex': 'warn',
     },
     settings: {
       react: {

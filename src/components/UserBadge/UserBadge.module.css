@@ -1,0 +1,25 @@
+.badge {
+  background-color: var(--background-info);
+  border-radius: 4px;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.infoWrapper,
+.killsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.img {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.name {
+  font-weight: 600;
+}
