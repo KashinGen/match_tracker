@@ -6,6 +6,7 @@ import { GameStatus } from '../GameStatus/GameStatus';
 import { TeamInfo } from '../TeamInfo/TeamInfo';
 import { useAccordion } from '../../hooks/useAccordion';
 import { Icon } from './Icon';
+import ScoreAnimation from '../ScoreAnimation/ScoreANimation';
 
 interface MatchCardProps {
   className?: string;
@@ -36,9 +37,10 @@ export const MatchCard = ({ className = '', match }: MatchCardProps) => {
         <div className={cls.topContent}>
           <TeamBadge name={awayTeam.name} />
           <div className={cls.scoreWrapper}>
-            <div className={cls.score}>
-              {awayScore} : {homeScore}
-            </div>
+            <ScoreAnimation
+              awayScore={awayScore}
+              homeScore={homeScore}
+            />
             <GameStatus status={status} />
           </div>
           <TeamBadge name={homeTeam.name} />
