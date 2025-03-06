@@ -28,4 +28,10 @@ export type Player = {
   kills: number;
 };
 
+export type SelectOption = {
+  value: 'All' | Status;
+  label: string;
+}
+
+
 export type Status = 'Scheduled' | 'Finished' | 'Ongoing';
