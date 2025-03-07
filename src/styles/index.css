@@ -20,6 +20,7 @@
 
   --color-primary: #fff;
   --color-danger: #eb0237;
+  --color-gray: #b4b5b6;
   --color-orange: #eb6402;
   --color-green: #43ad28;
   --font-family-title: 'TacticSans', sans-serif;
@@ -82,4 +83,16 @@ body {
 .count {
   font-weight: 600;
   line-height: 150%;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .container {
+    padding: 0 16px;
+  }
 }

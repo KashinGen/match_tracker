@@ -18,5 +18,39 @@
 }
 
 .screen {
-  padding-top: 42px;
+  padding: 42px 0;
+}
+
+@media screen and (max-width: 1290px) {
+  .top {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .controls:first-child {
+    justify-content: center;
+    width: 100%;
+  }
+  .controls:nth-child(2) {
+    justify-content: space-between;
+    width: 100%;
+  }
+  .controls:last-child {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .controls:nth-child(2) {
+    flex-direction: column;
+    & > div {
+      width: 100%;
+    }
+  }
+  .screen {
+    padding: 32px 0;
+  }
+  .controls {
+    gap: 10px;
+  }
 }

@@ -2,7 +2,7 @@ import { ERROR_API_MESSAGE, SOCKET_URL } from '../const';
 import { Match } from '../types';
 
 export const connectWebSocket = (
-  onError: (err: string) => void,
+  onError: (err: string | null) => void,
   onMessage: (data: Match[]) => void,
 ) => {
   const socket = new WebSocket(SOCKET_URL);
@@ -25,6 +25,7 @@ export const connectWebSocket = (
     try {
       const data = JSON.parse(message.data);
       console.log('WebSocket mess', data);
+      onError(null);
       onMessage(data.data);
     } catch (e) {
       onError(ERROR_API_MESSAGE);

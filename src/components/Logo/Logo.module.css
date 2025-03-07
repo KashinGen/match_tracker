@@ -1,5 +1,11 @@
 .title {
   font-family: var(--font-family-title);
-  font-size: 2rem;
+  font-size: 32px;
   line-height: 100%;
+}
+
+@media screen and (max-width: 512px) {
+  .title {
+    font-size: 28px;
+  }
 }

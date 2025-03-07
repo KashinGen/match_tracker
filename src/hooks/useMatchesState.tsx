@@ -1,10 +1,10 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { api } from '../services/api';
-import { Match } from '../types';
+import { Match, SelectOption } from '../types';
 import { ERROR_API_MESSAGE } from '../const';
 import { connectWebSocket } from '../services/webSocket';
 
-export const useMatchesState = () => {
+export const useMatchesState = ({ value }: SelectOption) => {
   const [matches, setMatches] = useState<Match[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<null | string>(null);
@@ -35,8 +35,15 @@ export const useMatchesState = () => {
     };
   }, []);
 
+  const filteredMatches = useMemo(() => {
+    if (!value || value === 'All') {
+      return matches;
+    }
+    return matches.filter((match) => match.status === value);
+  }, [matches, value]);
+
   return {
-    matches,
+    matches: filteredMatches,
     error,
     loading,
     onReset: getMatches,

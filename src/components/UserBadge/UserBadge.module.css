@@ -23,3 +23,9 @@
 .name {
   font-weight: 600;
 }
+
+@media screen and (max-width: 1785px) {
+  .badge {
+    flex-direction: column;
+  }
+}
