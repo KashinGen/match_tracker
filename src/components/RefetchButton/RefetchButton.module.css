@@ -17,11 +17,10 @@
   background-color: var(--btn-disabled);
 }
 
-@media screen and (hover: hover) {
-  .btn:hover {
-    background-color: var(--btn-hover);
-  }
+.btn:active {
+  background-color: var(--btn-hover);
 }
+
 
 @media screen and (max-width: 512px) {
   .btn {
