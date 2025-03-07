@@ -27,10 +27,12 @@ export const TeamInfo = (props: TeamInfoProps) => {
           <div className="label">Points:</div>
           <div className="count">{points}</div>
         </div>
+        <div className={cls.hr}></div>
         <div className={cls.info}>
           <div className="label">Место:</div>
           <div className="count">{place}</div>
         </div>
+        <div className={cls.hr}></div>
         <div className={cls.info}>
           <div className="label">Всего убийств:</div>
           <div className="count">{total_kills}</div>

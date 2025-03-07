@@ -15,9 +15,19 @@
 }
 
 .row {
+  grid-template-columns: 1fr 9px 1fr 9px 1fr;
+
   background-color: var(--background-info);
   border-radius: 4px;
   padding: 14px 24px;
+  gap: 0;
+}
+
+.hr {
+  margin: 4px 0;
+  height: 13px;
+  width: 1px;
+  background-color: #141a21;
 }
 
 .info {
@@ -25,4 +35,10 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+}
+
+@media screen and (max-width: 620px) {
+  .row {
+    padding: 14px 12px;
+  }
 }

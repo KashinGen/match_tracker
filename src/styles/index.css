@@ -56,8 +56,9 @@ html {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
-  height: 100%;
+  align-items: flex-start;
+  /* height: 100%; */
+  min-height: 100vh;
   background-color: var(--background);
   color: var(--color-primary);
   font-size: 16px;

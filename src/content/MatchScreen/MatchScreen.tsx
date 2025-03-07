@@ -6,7 +6,6 @@ import { ErrorMessage } from '../../components/ErrorMessage/ErrorMessage';
 import { MatchList } from '../MatchList/MatchList';
 import { RefetchButton } from '../../components/RefetchButton/RefetchButton';
 import { CustomSelect } from '../../components/Select/Select';
-import { ERROR_API_MESSAGE } from '../../const';
 import { useWindowWidth } from '../../hooks/useWindowSize';
 import { useFilter } from '../../hooks/useFilter';
 
@@ -50,8 +49,6 @@ export const MatchScreen = ({ className = '' }: MatchScreenProps) => {
 
             <div className={cls.controls}>
               {error && <ErrorMessage error={error} />}
-              <ErrorMessage error={ERROR_API_MESSAGE} />
-
               {width > 1280 && (
                 <RefetchButton
                   onClick={onReset}
