@@ -80,6 +80,7 @@ body {
   font-weight: 500;
   line-height: 150%;
   color: var(--label-color);
+  white-space: nowrap;
 }
 
 .count {

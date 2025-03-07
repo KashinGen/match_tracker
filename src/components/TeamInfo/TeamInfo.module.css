@@ -42,3 +42,11 @@
     padding: 14px 12px;
   }
 }
+
+
+@media screen and (max-width: 420px) {
+  .users {
+    grid-template-columns: unset;
+  }
+}
+
