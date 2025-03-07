@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { api } from '../services/api';
 import { Match, SelectOption } from '../types';
 import { ERROR_API_MESSAGE } from '../const';
@@ -8,6 +8,7 @@ export const useMatchesState = ({ value }: SelectOption) => {
   const [matches, setMatches] = useState<Match[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<null | string>(null);
+  const socket = useRef<WebSocket>(null);
 
   const getMatches = useCallback(async () => {
     try {
@@ -29,11 +30,17 @@ export const useMatchesState = ({ value }: SelectOption) => {
   }, []);
 
   useEffect(() => {
-    const socket = connectWebSocket(setError, setMatches);
+    if (!error) {
+      socket.current = connectWebSocket(setError, setMatches);
+    } else if (socket.current) {
+      socket.current.close();
+    }
     return () => {
-      socket.close();
+      if (socket.current) {
+        socket.current.close();
+      }
     };
-  }, []);
+  }, [error]);
 
   const filteredMatches = useMemo(() => {
     if (!value || value === 'All') {

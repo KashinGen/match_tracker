@@ -43,10 +43,8 @@
   }
 }
 
-
 @media screen and (max-width: 420px) {
   .users {
     grid-template-columns: unset;
   }
 }
-

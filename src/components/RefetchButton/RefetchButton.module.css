@@ -21,7 +21,6 @@
   background-color: var(--btn-hover);
 }
 
-
 @media screen and (max-width: 512px) {
   .btn {
     width: 100%;
