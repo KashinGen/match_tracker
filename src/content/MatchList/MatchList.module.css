@@ -4,3 +4,9 @@
   width: 100%;
   gap: 12px;
 }
+
+@media screen and (max-width: 620px) {
+  .list {
+    gap: 8px;
+  }
+}

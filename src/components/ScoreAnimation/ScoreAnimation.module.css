@@ -1,5 +1,15 @@
 .score {
   font-size: 20px;
   line-height: 24px;
+  height: 24px;
   display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 620px) {
+  .score {
+    font-size: 14px;
+    line-height: 17px;
+    height: 17px;
+  }
 }

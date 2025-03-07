@@ -60,6 +60,7 @@ body {
   height: 100%;
   background-color: var(--background);
   color: var(--color-primary);
+  font-size: 16px;
 }
 
 .container {
@@ -91,8 +92,14 @@ body {
   }
 }
 
-@media screen and (max-width: 512px) {
+@media screen and (max-width: 620px) {
   .container {
     padding: 0 16px;
+  }
+  .label {
+    font-size: 12px;
+  }
+  .count {
+    font-size: 14px;
   }
 }

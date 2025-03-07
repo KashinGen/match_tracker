@@ -6,7 +6,8 @@ import { GameStatus } from '../GameStatus/GameStatus';
 import { TeamInfo } from '../TeamInfo/TeamInfo';
 import { useAccordion } from '../../hooks/useAccordion';
 import { Icon } from './Icon';
-import ScoreAnimation from '../ScoreAnimation/ScoreANimation';
+import { useWindowWidth } from '../../hooks/useWindowSize';
+import ScoreAnimation from '../ScoreAnimation/ScoreAnimation';
 
 interface MatchCardProps {
   className?: string;
@@ -18,7 +19,7 @@ export const MatchCard = ({ className = '', match }: MatchCardProps) => {
     useAccordion();
 
   const { status, awayScore, awayTeam, homeScore, homeTeam } = match;
-
+  const width = useWindowWidth();
   return (
     <div
       className={cn(cls.match, className, { [cls.expanded]: isExpanded })}
@@ -45,7 +46,7 @@ export const MatchCard = ({ className = '', match }: MatchCardProps) => {
           </div>
           <TeamBadge name={homeTeam.name} />
         </div>
-        <Icon className={cls.chevron} />
+        {width > 612 && <Icon className={cls.chevron} />}
       </div>
 
       <div
@@ -60,6 +61,11 @@ export const MatchCard = ({ className = '', match }: MatchCardProps) => {
             points={awayTeam.points}
             total_kills={awayTeam.total_kills}
           />
+          {width <= 612 && (
+            <span className={cls.versus}>
+              <span>VS</span>
+            </span>
+          )}
           <TeamInfo
             place={homeTeam.place}
             players={homeTeam.players}
@@ -68,6 +74,11 @@ export const MatchCard = ({ className = '', match }: MatchCardProps) => {
           />
         </div>
       </div>
+      {width <= 612 && (
+        <div className={cls.iconWrapper}>
+          <Icon className={cls.chevron} />
+        </div>
+      )}
     </div>
   );
 };
